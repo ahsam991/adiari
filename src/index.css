@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FreshCart - Modern Grocery E-commerce Design System
+   Inspired by fresh produce, nature, and clean shopping experiences
+   All colors MUST be HSL
+*/
+
+@layer base {
+  :root {
+    /* Core Background & Foreground */
+    --background: 0 0% 100%;
+    --foreground: 142 20% 12%;
+
+    /* Fresh Green Primary - Main brand color */
+    --primary: 142 72% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm Secondary - Complementary accent */
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 38 92% 12%;
+
+    /* Card & Surface */
+    --card: 0 0% 100%;
+    --card-foreground: 142 20% 12%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 142 20% 12%;
+
+    /* Muted backgrounds */
+    --muted: 142 20% 97%;
+    --muted-foreground: 142 10% 45%;
+
+    /* Accent - Light green tint */
+    --accent: 142 60% 95%;
+    --accent-foreground: 142 72% 28%;
+
+    /* Destructive - For errors/cancellations */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 142 15% 90%;
+    --input: 142 15% 90%;
+    --ring: 142 72% 38%;
+
+    /* Border Radius */
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 142 20% 98%;
+    --sidebar-foreground: 142 20% 25%;
+    --sidebar-primary: 142 72% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 40% 94%;
+    --sidebar-accent-foreground: 142 72% 28%;
+    --sidebar-border: 142 15% 88%;
+    --sidebar-ring: 142 72% 38%;
+
+    /* Custom Grocery Colors */
+    --fresh: 142 72% 38%;
+    --fresh-light: 142 60% 95%;
+    --fresh-dark: 142 72% 28%;
+    --organic: 98 50% 45%;
+    --harvest: 38 92% 50%;
+    --harvest-light: 38 60% 94%;
+    --berry: 340 75% 55%;
+    --citrus: 45 100% 55%;
+    --earth: 30 25% 35%;
+    --cream: 40 30% 97%;
+    --success: 142 72% 38%;
+    --warning: 45 100% 55%;
+    --info: 200 80% 50%;
+
+    /* Gradients */
+    --gradient-fresh: linear-gradient(135deg, hsl(142, 72%, 38%), hsl(98, 50%, 45%));
+    --gradient-harvest: linear-gradient(135deg, hsl(38, 92%, 50%), hsl(45, 100%, 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(142, 60%, 95%) 0%, hsl(0, 0%, 100%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(142, 20%, 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(142 20% 12% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(142 20% 12% / 0.08), 0 2px 4px -2px hsl(142 20% 12% / 0.04);
+    --shadow-lg: 0 10px 15px -3px hsl(142 20% 12% / 0.08), 0 4px 6px -4px hsl(142 20% 12% / 0.04);
+    --shadow-xl: 0 20px 25px -5px hsl(142 20% 12% / 0.1), 0 8px 10px -6px hsl(142 20% 12% / 0.04);
+    --shadow-card: 0 2px 8px -2px hsl(142 20% 12% / 0.1), 0 4px 12px -4px hsl(142 20% 12% / 0.06);
+    --shadow-product: 0 4px 16px -4px hsl(142 20% 12% / 0.12);
+
+    /* Animations */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 142 20% 8%;
+    --foreground: 142 10% 95%;
+
+    --primary: 142 72% 48%;
+    --primary-foreground: 142 20% 8%;
+
+    --secondary: 38 80% 55%;
+    --secondary-foreground: 38 80% 8%;
+
+    --card: 142 20% 12%;
+    --card-foreground: 142 10% 95%;
+
+    --popover: 142 20% 12%;
+    --popover-foreground: 142 10% 95%;
+
+    --muted: 142 20% 18%;
+    --muted-foreground: 142 10% 60%;
+
+    --accent: 142 30% 18%;
+    --accent-foreground: 142 60% 75%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 142 20% 20%;
+    --input: 142 20% 20%;
+    --ring: 142 72% 48%;
+
+    --sidebar-background: 142 20% 10%;
+    --sidebar-foreground: 142 10% 90%;
+    --sidebar-primary: 142 72% 48%;
+    --sidebar-primary-foreground: 142 20% 8%;
+    --sidebar-accent: 142 25% 18%;
+    --sidebar-accent-foreground: 142 60% 75%;
+    --sidebar-border: 142 20% 18%;
+    --sidebar-ring: 142 72% 48%;
+
+    --gradient-hero: linear-gradient(180deg, hsl(142, 20%, 10%) 0%, hsl(142, 20%, 8%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(142, 20%, 14%) 0%, hsl(142, 20%, 10%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus states */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer components {
+  /* Product Card Styles */
+  .product-card {
+    @apply relative overflow-hidden rounded-xl bg-card transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .product-card:hover {
+    box-shadow: var(--shadow-product);
+    transform: translateY(-2px);
+  }
+
+  /* Category Badge */
+  .category-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-accent text-accent-foreground;
+  }
+
+  /* Price Display */
+  .price-tag {
+    @apply text-xl font-bold text-primary;
+  }
+
+  .price-original {
+    @apply text-sm text-muted-foreground line-through;
+  }
+
+  /* Stock Badge */
+  .stock-badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .stock-badge.in-stock {
+    @apply bg-fresh-light text-fresh-dark;
+  }
+
+  .stock-badge.low-stock {
+    @apply bg-harvest-light text-earth;
+  }
+
+  .stock-badge.out-of-stock {
+    @apply bg-destructive/10 text-destructive;
+  }
+
+  /* Mobile Bottom Navigation */
+  .mobile-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-background border-t border-border z-50;
+    box-shadow: 0 -4px 6px -1px hsl(142 20% 12% / 0.05);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Floating Cart Button */
+  .floating-cart {
+    @apply fixed bottom-20 right-4 z-40 p-4 rounded-full bg-primary text-primary-foreground;
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Hero Section */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Fresh Badge */
+  .fresh-badge {
+    @apply absolute top-2 left-2 px-2 py-1 text-xs font-semibold rounded-md;
+    background: var(--gradient-fresh);
+    color: white;
+  }
+
+  /* Sale Badge */
+  .sale-badge {
+    @apply absolute top-2 right-2 px-2 py-1 text-xs font-semibold rounded-md bg-berry text-white;
+  }
+
+  /* Quantity Selector */
+  .quantity-selector {
+    @apply inline-flex items-center gap-2 rounded-lg border border-border bg-background p-1;
+  }
+
+  .quantity-btn {
+    @apply h-8 w-8 flex items-center justify-center rounded-md hover:bg-accent transition-colors;
+  }
+
+  /* Cart Item */
+  .cart-item {
+    @apply flex gap-4 p-4 rounded-xl bg-card border border-border;
+  }
+
+  /* Admin Sidebar */
+  .admin-sidebar {
+    @apply fixed left-0 top-0 bottom-0 w-64 bg-sidebar border-r border-sidebar-border z-40;
+  }
+
+  /* Status Badge */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-badge.pending {
+    @apply bg-harvest-light text-earth;
+  }
+
+  .status-badge.confirmed {
+    @apply bg-info/10 text-info;
+  }
+
+  .status-badge.delivered {
+    @apply bg-fresh-light text-fresh-dark;
+  }
+
+  .status-badge.cancelled {
+    @apply bg-destructive/10 text-destructive;
+  }
+}
+
+@layer utilities {
+  /* Touch-friendly sizing */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Safe area padding */
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Line clamp utilities */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-fresh {
+    background: var(--gradient-fresh);
+  }
+
+  .bg-gradient-harvest {
+    background: var(--gradient-harvest);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  /* Scrollbar styling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Image lazy loading placeholder */
+  .image-placeholder {
+    @apply bg-muted animate-pulse;
+  }
+}
